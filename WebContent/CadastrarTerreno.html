@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<meta charset="ISO-8859-1">
+<title>Cadastro de Terrenos</title>
+</head>
+<body>
+<div style="margin: 0 auto; width:500px;">
+<form name="form1" id="form-1" action="VerificaNovoTerrenoServlet" method="post">
+	<div class="ui-field-contain">
+		<label for="frente">Frente:</label>
+		<input name="frente" id="frente" data-clear-btn="true" value="" type="text"/>
+	</div>
+	<div class="ui-field-contain">
+		<label for="fundo">Fundo:</label>
+		<input name="fundo" id="fundo" data-clear-btn="true" value="" type="text"/>
+	</div>
+	<div class="ui-field-contain">
+		<label for="endereco">Endereço:</label>
+		<input name="endereco" id="endereco" data-clear-btn="true" value="" type="text"/>
+	</div>
+	<div class="ui-field-contain">
+		<label for="inscricaoImobiliaria">Inscrição Imobiliária:</label>
+		<input name="inscricaoImobiliaria" id="inscricaoImobiliaria" data-clear-btn="true" value="" type="text"/>
+	</div>
+	<div class="ui-field-contain">
+		<label for="tipoTerreno">Tipo de Terreno:</label>
+		<select name="tipoTerreno" id="tipoTerreno" data-clear-btn="true">
+			<option value="Comercial">Comercial</option>
+			<option value="Predial">Predial</option>
+			<option value="Residencial">Residencial</option>
+		</select>
+	</div>	
+	<div class="ui-input-btn ui-btn ui-corner-all ui-btn-b">
+		Continuar
+		<input data-enhanced="true" type="submit" value="Enviar" id="button-1"/>
+	</div>
+</form>
+</div>
+</body>
+</html>
