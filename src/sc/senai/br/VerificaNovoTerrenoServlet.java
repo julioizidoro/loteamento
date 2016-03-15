@@ -30,7 +30,14 @@ public class VerificaNovoTerrenoServlet extends HttpServlet {
 		String tipoTerreno = request.getParameter("tipoTerreno");
 		if (tipoTerreno.equalsIgnoreCase("Comercial")){
 			response.sendRedirect("CadastrarTerrenoComercial.html");
-			//getServletContext().getRequestDispatcher("/CadastrarTerrenoComercial.html").forward(request, response);
+		} else if (tipoTerreno.equalsIgnoreCase("Predial")) {
+			//response.sendRedirect("CadastrarTerrenoPredial.html");
+			getServletContext().getRequestDispatcher("/CadastrarTerrenoPredial.html").forward(request, response);
+			
+		} else if (tipoTerreno.equalsIgnoreCase("Residencial")){
+			response.sendRedirect("CadastrarTerrenoResidencial.html");
+		} else {
+			response.sendRedirect("CadastrarTerreno.html");
 		}
 	}
 

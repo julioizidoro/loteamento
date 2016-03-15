@@ -5,12 +5,34 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-<meta charset="ISO-8859-1">
+	<meta charset="ISO-8859-1">
+	
+<script type="text/javascript">
+function habilitaCampos() {
+    if (document.getElementById('tipoTerreno').value == "Comercial") {
+        document.getElementById('divComercial').style.display = 'block';
+        document.getElementById('divPredial').style.display = 'none';
+        document.getElementById('divResidencial').style.display = 'none';
+        
+    } else if (document.getElementById('tipoTerreno').value == "Predial"){
+        document.getElementById('divComercial').style.display = 'none';
+        document.getElementById('divPredial').style.display = 'block';
+        document.getElementById('divResidencial').style.display = 'none';
+        
+    } else {
+        document.getElementById('divComercial').style.display = 'none';
+        document.getElementById('divPredial').style.display = 'none';
+        document.getElementById('divResidencial').style.display = 'block';
+    }
+}
+</script>
+	
 <title>Cadastro de Terrenos</title>
 </head>
 <body>
 <div style="margin: 0 auto; width:500px;">
-<form name="form1" id="form-1" action="VerificaNovoTerrenoServlet" method="post">
+<h2>Cadastro de Terrenos</h2>
+<form name="form1" id="form-1" action="CadastrarTerrenoServlet" method="post">
 	<div class="ui-field-contain">
 		<label for="frente">Frente:</label>
 		<input name="frente" id="frente" data-clear-btn="true" value="" type="text"/>
@@ -29,16 +51,45 @@
 	</div>
 	<div class="ui-field-contain">
 		<label for="tipoTerreno">Tipo de Terreno:</label>
-		<select name="tipoTerreno" id="tipoTerreno" data-clear-btn="true">
+		<select name="tipoTerreno" id="tipoTerreno" data-clear-btn="true" onchange="habilitaCampos()">
 			<option value="Comercial">Comercial</option>
 			<option value="Predial">Predial</option>
 			<option value="Residencial">Residencial</option>
 		</select>
-	</div>	
-	<div class="ui-input-btn ui-btn ui-corner-all ui-btn-b">
-		Continuar
-		<input data-enhanced="true" type="submit" value="Enviar" id="button-1"/>
 	</div>
+	<div id="divComercial" style="display:block">
+		<div class="ui-field-contain">
+			<label for="numeroLojas">Número de Lojas:</label>
+			<input name="numeroLojas" id="numeroLojas" data-clear-btn="true" value="" type="text"/>
+		</div>
+		<div class="ui-field-contain">
+			<label for="numeroVagas">Número de Vagas:</label>
+			<input name="numeroVagas" id="numeroVagas" data-clear-btn="true" value="" type="text"/>
+		</div>		
+	</div>
+	<div id="divPredial" style="display: none">
+		<div class="ui-field-contain">
+			<label for="maximoAndares">Máximo de Andares:</label>
+			<input name="maximoAndares" id="maximoAndares" data-clear-btn="true" value="" type="text"/>
+		</div>
+		<div class="ui-field-contain">
+			<label for="permiteSubsolo">Permite Subsolo:</label>
+			<select name="permiteSubsolo" id="permiteSubsolo" data-clear-btn="true">
+				<option value="true">Sim</option>
+				<option value="false">Não</option>
+			</select>
+		</div>	
+	</div>
+	<div id="divResidencial" style="display: none">
+		<div class="ui-field-contain">
+			<label for="grauInclinacao">Grau de Inclinação:</label>
+			<input name="grauInclinacao" id="grauInclinacao" data-clear-btn="true" value="" type="text"/>
+		</div>	
+	</div>
+	<div class="ui-input-btn ui-btn ui-corner-all ui-btn-b">
+		Cadastrar
+		<input data-enhanced="true" type="submit" value="Enviar" id="button-1"/>
+	</div>	
 </form>
 </div>
 </body>
