@@ -46,9 +46,10 @@ public class TerrenoDAO {
 		}
 	}
 	
-	public void remove(Terreno terreno){
+	public void remove(int id){
 		try {
 			entityManager.getTransaction().begin();
+			Terreno terreno = entityManager.find(Terreno.class, id);
 			entityManager.remove(terreno);
 			entityManager.getTransaction().commit();			
 		} catch (Exception e) {
