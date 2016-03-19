@@ -37,7 +37,6 @@ public class ListarTerrenosServlet extends HttpServlet {
 		html.append("<link rel=\"stylesheet\" href=\"http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\" />");
 		html.append("<script src=\"http://code.jquery.com/jquery-2.0.3.min.js\"></script>");
 		html.append("<script src=\"http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>");
-		html.append("<meta charset=\"ISO-8859-1\">");
 		html.append("<title>Lista de Terrenos</title>");
 			html.append("<style>");
 			html.append("table, th, td {");
@@ -54,10 +53,10 @@ public class ListarTerrenosServlet extends HttpServlet {
 		html.append("<input type=\"button\" width=\"100px\" value=\"Incluir\" onClick=\"window.location.href='CadastrarTerreno.html'\">");
 		html.append("<table align=\"center\" style=\"width:50%\">");
 		html.append("<tr>");
-			html.append("<th>Endereço</th>");
-			html.append("<th>Área (m2)</th>");
+			html.append("<th>Endereco</th>");
+			html.append("<th>Area (m2)</th>");
 			html.append("<th>Tipo</th>");
-			html.append("<th>Ação</th>");
+			html.append("<th>Acao</th>");
 		html.append("</tr>");
 		for (Terreno terreno : new TerrenoDAO().findAll()) {
 			html.append("<tr>");

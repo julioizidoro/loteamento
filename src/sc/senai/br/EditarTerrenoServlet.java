@@ -57,8 +57,7 @@ public class EditarTerrenoServlet extends HttpServlet {
 			"<link rel=\"stylesheet\" href=\"http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css\" />" +
 			"<script src=\"http://code.jquery.com/jquery-2.0.3.min.js\"></script>" +
 			"<script src=\"http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js\"></script>" +
-			"<meta charset=\"ISO-8859-1\">" +
-		"<title>Cadastro de Pessoas</title>" +
+		"<title>Cadastro de Terreno</title>" +
 		"</head>" +
 		"<body>" +
 		"<div style=\"margin: 0 auto; width:350px;\">" +
@@ -67,7 +66,7 @@ public class EditarTerrenoServlet extends HttpServlet {
 			"<input name=\"id\" id=\"id\" value=\""+ t.getId() + "\" type=\"hidden\"/>" +
 			"<input name=\"tipoTerreno\" id=\"tipoTerreno\" value=\""+ tipoTerreno + "\" type=\"hidden\"/>" +
 			"<div class=\"ui-field-contain\">" +
-				"<label for=\"endereco\">Endereço:</label>" +
+				"<label for=\"endereco\">Endereco:</label>" +
 				"<input name=\"endereco\" id=\"endereco\" data-clear-btn=\"true\" value=\""+ t.getEndereco() + "\" type=\"text\"/>" +
 			"</div>" +
 			"<div class=\"ui-field-contain\">" +
@@ -79,35 +78,35 @@ public class EditarTerrenoServlet extends HttpServlet {
 				"<input name=\"fundo\" id=\"fundo\" data-clear-btn=\"true\" value=\""+ t.getFundo() + "\" type=\"text\"/>" +
 			"</div>" +
 			"<div class=\"ui-field-contain\">" +
-				"<label for=\"inscricaoImobiliaria\">Inscrição Imobiliária:</label>" +
+				"<label for=\"inscricaoImobiliaria\">Inscricao Imobiliaria:</label>" +
 				"<input name=\"inscricaoImobiliaria\" id=\"inscricaoImobiliaria\" data-clear-btn=\"true\" value=\""+ t.getIncricaoImobiliaria() + "\" type=\"text\"/>" +
 			"</div>" +
 			"<div id=\"divComercial\" style=\"display:" + terrenoComercial + "\">" +
 				"<div class=\"ui-field-contain\">" +
-					"<label for=\"numeroLojas\">Número de Lojas:</label>" +
+					"<label for=\"numeroLojas\">Numero de Lojas:</label>" +
 					"<input name=\"numeroLojas\" id=\"numeroLojas\" data-clear-btn=\"true\" value=\"" + ((t.getClass().getSimpleName().equals("TerrenoComercial")) ? ((TerrenoComercial)t).getNumeroLojas() : "") + "\" type=\"text\"/>" +
 				"</div>" +
 				"<div class=\"ui-field-contain\">" +
-					"<label for=\"numeroVagas\">Número de Vagas:</label>" +
+					"<label for=\"numeroVagas\">Numero de Vagas:</label>" +
 					"<input name=\"numeroVagas\" id=\"numeroVagas\" data-clear-btn=\"true\" value=\"" + ((t.getClass().getSimpleName().equals("TerrenoComercial")) ? ((TerrenoComercial)t).getNumeroVagas() : "") + "\" type=\"text\"/>" +
 				"</div>" +		
 			"</div>" +
 			"<div id=\"divPredial\" style=\"display:" + terrenoPredial + "\">" +
 				"<div class=\"ui-field-contain\">" +
-					"<label for=\"maximoAndares\">Máximo de Andares:</label>" +
+					"<label for=\"maximoAndares\">Maximo de Andares:</label>" +
 					"<input name=\"maximoAndares\" id=\"maximoAndares\" data-clear-btn=\"true\" value=\"" + ((t.getClass().getSimpleName().equals("TerrenoPredial")) ? ((TerrenoPredial)t).getMaximoAndares() : "") + "\" type=\"text\"/>" +
 				"</div>" +
 				"<div class=\"ui-field-contain\">" +
 					"<label for=\"permiteSubsolo\">Permite Subsolo:</label>" +
 					"<select name=\"permiteSubsolo\" id=\"permiteSubsolo\" data-clear-btn=\"true\">" +
-						"<option value=\"true\" " + (((TerrenoPredial)t).isPermiteSubsolo() ? "selected":"") + ">Sim</option>" +
-						"<option value=\"false\" " + (((TerrenoPredial)t).isPermiteSubsolo() ? "":"selected") + ">Não</option>" +
+						"<option value=\"true\" " + ((t.getClass().getSimpleName().equals("TerrenoPredial")) ? (((TerrenoPredial)t).isPermiteSubsolo() ? "selected":"") : "") + ">Sim</option>" +
+						"<option value=\"false\" " + ((t.getClass().getSimpleName().equals("TerrenoPredial")) ? (((TerrenoPredial)t).isPermiteSubsolo() ? "":"selected") : "") + ">Nï¿½o</option>" +
 					"</select>" +
 				"</div>	" +
 			"</div>" +
 			"<div id=\"divResidencial\" style=\"display:" + terrenoResidencial + "\">" +
 				"<div class=\"ui-field-contain\">" +
-					"<label for=\"grauInclinacao\">Grau de Inclinação:</label>" +
+					"<label for=\"grauInclinacao\">Grau de Inclinacao:</label>" +
 					"<input name=\"grauInclinacao\" id=\"grauInclinacao\" data-clear-btn=\"true\" value=\"" + ((t.getClass().getSimpleName().equals("TerrenoResidencial")) ? ((TerrenoResidencial)t).getGrauInclinacao() : "") + "\" type=\"text\"/>" +
 				"</div>	" +
 			"</div>" +	
